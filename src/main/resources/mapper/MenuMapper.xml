@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="two.example.demo.dao.MenuDao">
+    <select id="findAll" resultType="two.example.demo.eneity.Menu">
+        select * from Menu;
+    </select>
+    <select id="findByType" parameterType="string" resultType="two.example.demo.eneity.Menu">
+        select * from Menu where type=#{type};
+    </select>
+    <select id="findByKeywords" parameterType="string" resultType="two.example.demo.eneity.Menu">
+        select * from Menu where name like #{keywords};
+    </select>
+    <insert id="insertMenu" parameterType="two.example.demo.eneity.Menu" useGeneratedKeys="true">
+        insert into Menu(name,type,num,price,description,image) values (#{name},#{type},#{num},#{price},#{description},#{image});
+    </insert>
+    <delete id="deleteMenu" parameterType="String">
+        delete from Menu where name=#{name};
+    </delete>
+    <update id="updateMenu">
+        update Menu
+        <set>
+        <if test="param2!=null">
+            name=#{param2},
+        </if>
+        <if test="param3!=null">
+            num=#{param3},
+        </if>
+        <if test="param4!=null">
+            price=#{param4},
+        </if>
+        <if test="param5!=null">
+            description=#{param5},
+        </if>
+        <if test="param6!=null">
+            image=#{param6}
+        </if>
+        </set>
+        where idMenu=#{param1}
+    </update>
+</mapper>

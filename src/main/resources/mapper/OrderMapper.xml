@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="two.example.demo.dao.OrderDao">
+    <select id="findAll" resultType="two.example.demo.eneity.Order">
+        select * from shun.order;
+    </select>
+
+</mapper>
