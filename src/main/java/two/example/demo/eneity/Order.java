@@ -6,11 +6,15 @@ public class Order {
     private Integer idMenu;
     private String name;
     private Integer quantity;
-    private String idCostomer;
-    private String condition;
+    private String idCustomer;
+    private String status;
     private Float total;
-    private String nameCostomer;
-    private String addressCostomer;
+    private String nameCustomer;
+    private String addressCustomer;
+
+    public Order(){
+
+    }
 
     public Integer getNoOrder() {
         return noOrder;
@@ -52,36 +56,36 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public String getIdCostomer() {
-        return idCostomer;
+    public String getIdCustomer() {
+        return idCustomer;
     }
 
-    public void setIdCostomer(String idCostomer) {
-        this.idCostomer = idCostomer;
+    public void setIdCustomer(String idCustomer) {
+        this.idCustomer = idCustomer;
     }
 
-    public String getNameCostomer() {
-        return nameCostomer;
+    public String getNameCustomer() {
+        return nameCustomer;
     }
 
-    public void setNameCostomer(String nameCostomer) {
-        this.nameCostomer = nameCostomer;
+    public void setNameCustomer(String nameCustomer) {
+        this.nameCustomer = nameCustomer;
     }
 
-    public String getAddressCostomer() {
-        return addressCostomer;
+    public String getAddressCustomer() {
+        return addressCustomer;
     }
 
-    public void setAddressCostomer(String addressCostomer) {
-        this.addressCostomer = addressCostomer;
+    public void setAddressCustomer(String addressCustomer) {
+        this.addressCustomer = addressCustomer;
     }
 
-    public String getCondition() {
-        return condition;
+    public String getStatus() {
+        return status;
     }
 
-    public void setCondition(String condition) {
-        this.condition = condition;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Float getTotal() {
@@ -92,7 +96,5 @@ public class Order {
         this.total = total;
     }
 
-    public Order(){
 
-    }
 }

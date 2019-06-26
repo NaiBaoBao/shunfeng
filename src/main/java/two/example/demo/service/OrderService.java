@@ -13,4 +13,14 @@ public class OrderService {
     public List<Order> findAll(){
         return orderDao.findAll();
     }
+    public List<Order> findById(String idCustomer){
+        return orderDao.findById(idCustomer);
+    }
+    public List<Order> findByName(String nameCustomer){
+        String n="%"+nameCustomer+"%";
+        return orderDao.findByName(n);
+    }
+    public int insertOrder(Order order){
+        return orderDao.insertOrder(order);
+    }
 }

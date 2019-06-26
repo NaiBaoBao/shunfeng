@@ -6,5 +6,13 @@
     <select id="findAll" resultType="two.example.demo.eneity.Order">
         select * from shun.order;
     </select>
-
+    <select id="findById" parameterType="String" resultType="two.example.demo.eneity.Order">
+        select * from shun.order where idCustomer=#{idCustomer};
+    </select>
+    <select id="findByName" parameterType="String" resultType="two.example.demo.eneity.Order">
+        select * from shun.order where nameCustomer like #{nameCustomer};
+    </select>
+    <insert id="insertOrder" parameterType="two.example.demo.eneity.Order" useGeneratedKeys="true">
+        insert into shun.order(idOrder,idMenu,name,quantity,idCustomer,status,total,nameCustomer,addressCustomer) values(#{idOrder},#{idMenu},#{name},#{quantity},#{idCustomer},#{status},#{total},#{nameCustomer},#{addressCustomer});
+    </insert>
 </mapper>
