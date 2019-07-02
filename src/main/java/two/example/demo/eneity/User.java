@@ -3,9 +3,10 @@ package two.example.demo.eneity;
 public class User {
     private String id;
     private String password;
-    private String isorder;
+    private Integer isorder;
     private String name;
     private String address;
+    private String phone;
 
     public User(){
     }
@@ -26,11 +27,11 @@ public class User {
         this.password = password;
     }
 
-    public String getIsorder() {
+    public Integer getIsorder() {
         return isorder;
     }
 
-    public void setIsorder(String isorder) {
+    public void setIsorder(Integer isorder) {
         this.isorder = isorder;
     }
 
@@ -48,5 +49,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

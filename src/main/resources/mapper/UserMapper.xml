@@ -10,27 +10,36 @@
         select * from User where id=#{id};
     </select>
     <insert id="insertUser" parameterType="two.example.demo.eneity.User">
-        insert into User(id,password,isorder,name,address) values (#{id},#{password},#{isorder},#{name},#{address});
+        insert into User(id,password,isorder,name,address,phone) values (#{id},#{password},#{isorder},#{name},#{address},#{phone});
     </insert>
     <delete id="deleteUser" parameterType="String">
         delete from User where id=#{id};
     </delete>
     <update id="updateUser">
         update User
-        <set>
+        set
             <if test="param2!=null">
-                password=#{param2},
+                password=#{param2}
             </if>
             <if test="param3!=null">
-                isorder=#{param3},
+                isorder=#{param3}
             </if>
             <if test="param4!=null">
-                name=#{param4},
+                name=#{param4}
             </if>
             <if test="param5!=null">
                 address=#{param5}
             </if>
             where id=#{param1}
-        </set>
+
     </update>
+    <select id="findClient" resultType="two.example.demo.eneity.User">
+        SELECT * FROM user where isorder=0
+    </select>
+    <update id="modifyUser">
+        UPDATE user set name=#{name},address=#{address},phone=#{phone} where id=#{id}
+    </update>
+    <select id="findOwner" resultType="two.example.demo.eneity.User">
+        SELECT * FROM user where isorder=1
+    </select>
 </mapper>

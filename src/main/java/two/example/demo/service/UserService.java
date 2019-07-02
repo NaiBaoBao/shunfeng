@@ -1,5 +1,6 @@
 package two.example.demo.service;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import two.example.demo.dao.AdminDao;
@@ -14,6 +15,11 @@ public class UserService {
 
     public List<User> findAll(){
         return userDao.findAll();
+    }
+    public User findById(String id){
+        List<User> userList= userDao.findById(id);
+        User user=userList.get(0);
+        return user;
     }
     public User login(String id,String password){
         List<User> userList=userDao.findById(id);
@@ -40,7 +46,17 @@ public class UserService {
     public int deleteUser(String id){
         return userDao.deleteUser(id);
     }
-    public int updateUser(String id,String password,String isorder,String name,String address){
+    public int updateUser(@Param("id") String id,@Param("password") String password, @Param("isorder") String isorder,@Param("name") String name,@Param("address") String address){
         return userDao.updateUser(id,password,isorder,name,address);
+    }
+    public List<User> findClient(){
+        return userDao.findClient();
+    }
+    public int modifyUser(String id,String name,String address,String phone){
+        return userDao.modifyUser(id, name, address, phone);
+    }
+
+    public List<User> findOwner(){
+        return userDao.findOwner();
     }
 }

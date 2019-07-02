@@ -11,5 +11,8 @@ public interface UserDao {
     public List<User> findById(String id);
     public int insertUser (User user);
     public int deleteUser(String id);
+    public List<User> findClient();
+    public List<User> findOwner();
+    public int modifyUser(String id,String name,String address,String phone);
     public int updateUser(@Param("id") String id, @Param("password") String password,@Param("isorder") String isorder,@Param("name")String name, @Param("address") String address);
 }
