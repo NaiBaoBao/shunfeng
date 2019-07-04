@@ -46,8 +46,8 @@ public class UserService {
     public int deleteUser(String id){
         return userDao.deleteUser(id);
     }
-    public int updateUser(@Param("id") String id,@Param("password") String password, @Param("isorder") String isorder,@Param("name") String name,@Param("address") String address){
-        return userDao.updateUser(id,password,isorder,name,address);
+    public int updateUser(@Param("id") String id,@Param("password") String password, @Param("isorder") String isorder,@Param("name") String name,@Param("address") String address,@Param("phone")String phone){
+        return userDao.updateUser(id,password,isorder,name,address,phone);
     }
     public List<User> findClient(){
         return userDao.findClient();
@@ -58,5 +58,14 @@ public class UserService {
 
     public List<User> findOwner(){
         return userDao.findOwner();
+    }
+
+    public int modifyPass(String id,String oldPass,String newPass){
+        List<User> users=userDao.findById(id);
+        User user=users.get(0);
+        if (user.getPassword().equals(oldPass)){
+            return userDao.modifyPass(id,newPass);
+        }
+        return 0;
     }
 }

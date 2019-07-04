@@ -39,4 +39,7 @@
         </set>
         where idMenu=#{param1}
     </update>
+    <update id="modifyMenu">
+        UPDATE menu set name=#{name},type=#{type},num=#{num},price=#{price},description=#{description},image=#{image} where id_menu=#{idMenu}
+    </update>
 </mapper>

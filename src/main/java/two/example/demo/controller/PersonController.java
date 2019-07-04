@@ -80,8 +80,8 @@ public class PersonController {
         return userService.deleteUser(id);
     }
     @GetMapping(value="user/modified")
-    public int updateUser(@Param("id") String id,@Param("password") String password,@Param("isorder")String isorder,@Param("name") String name,@Param("address") String address){
-        return userService.updateUser(id,password,isorder,name,address);
+    public int updateUser(@Param("id") String id,@Param("password") String password,@Param("isorder")String isorder,@Param("name") String name,@Param("address") String address,@Param("phone") String phone){
+        return userService.updateUser(id,password,isorder,name,address,phone);
     }
     @PostMapping(value="admin")
     public int insertAdmin(Admin admin){
@@ -110,4 +110,8 @@ public class PersonController {
         return userService.modifyUser(id, name, address, phone);
     }
 
+    @GetMapping(value = "user/modifyPass")
+    public int modifyPass(String id,String oldPass,String newPass){
+        return userService.modifyPass(id, oldPass, newPass);
+    }
 }

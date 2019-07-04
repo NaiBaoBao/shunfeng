@@ -1,22 +1,22 @@
 package two.example.demo.eneity;
 
 public class Menu {
-    private String idMenu;
+    private Integer idMenu;
     private String name;
     private String type;
     private Integer num;
     private Float price;
     private String description;
-    private  byte[] image;
+    private String image;
 
     public Menu(){
     }
 
-    public String getIdMenu() {
+    public Integer getIdMenu() {
         return idMenu;
     }
 
-    public void setIdMenu(String idMenu) {
+    public void setIdMenu(Integer idMenu) {
         this.idMenu = idMenu;
     }
 
@@ -60,11 +60,24 @@ public class Menu {
         this.description = description;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "idMenu=" + idMenu +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", num=" + num +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

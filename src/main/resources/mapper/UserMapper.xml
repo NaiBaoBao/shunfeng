@@ -30,6 +30,9 @@
             <if test="param5!=null">
                 address=#{param5}
             </if>
+            <if test="param6!=null">
+                phone=#{param6}
+            </if>
             where id=#{param1}
 
     </update>
@@ -42,4 +45,7 @@
     <select id="findOwner" resultType="two.example.demo.eneity.User">
         SELECT * FROM user where isorder=1
     </select>
+    <update id="modifyPass">
+        UPDATE user set password=#{password} where id=#{id}
+    </update>
 </mapper>

@@ -13,6 +13,7 @@ public interface UserDao {
     public int deleteUser(String id);
     public List<User> findClient();
     public List<User> findOwner();
+    public int modifyPass(String id,String password);
     public int modifyUser(String id,String name,String address,String phone);
-    public int updateUser(@Param("id") String id, @Param("password") String password,@Param("isorder") String isorder,@Param("name")String name, @Param("address") String address);
+    public int updateUser(@Param("id") String id, @Param("password") String password,@Param("isorder") String isorder,@Param("name")String name, @Param("address") String address,@Param("phone")String phone);
 }

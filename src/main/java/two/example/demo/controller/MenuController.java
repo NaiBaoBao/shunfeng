@@ -25,8 +25,9 @@ public class MenuController {
     public List<Menu> findByKeywords(@RequestParam("keywords")String keywords){
         return  menuService.findByKeywords(keywords);
     }
-    @PostMapping(value="")
+    @GetMapping(value="insert")
     public int insertMenu(Menu menu){
+        System.out.println(menu.toString());
         return menuService.insertMenu(menu);
     }
     @DeleteMapping(value = "")
@@ -34,8 +35,12 @@ public class MenuController {
         return menuService.deleteMenu(name);
     }
     @PutMapping(value = "")
-    public int updateMenu(Integer idMenu,String name,Integer num,Float price,String description,Byte[] image){
+    public int updateMenu(Integer idMenu,String name,Integer num,Float price,String description,String image){
         return menuService.updateMenu(idMenu,name,num,price,description,image);
+    }
+    @GetMapping(value = "modify")
+    public int modifyMenu(Integer idMenu,String name,String type,Integer num,Float price,String description,String image){
+        return menuService.modifyMenu(idMenu,name,type,num,price,description,image);
     }
 
 }
