@@ -21,8 +21,13 @@ public class UserService {
         User user=userList.get(0);
         return user;
     }
+    public User findByPhone(String phone){
+        List<User> userList= userDao.findByPhone(phone);
+        User user=userList.get(0);
+        return user;
+    }
     public User login(String id,String password){
-        List<User> userList=userDao.findById(id);
+        List<User> userList=userDao.findByPhone(id);
         if(userList!=null&&userList.size()>0){
             User user=userList.get(0);
             if(user.getPassword().equals(password)){

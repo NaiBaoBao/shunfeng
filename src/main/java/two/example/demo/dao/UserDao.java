@@ -9,6 +9,7 @@ import java.util.List;
 public interface UserDao {
     public List<User> findAll();
     public List<User> findById(String id);
+    public List<User> findByPhone(String phone);
     public int insertUser (User user);
     public int deleteUser(String id);
     public List<User> findClient();

@@ -6,11 +6,14 @@
     <select id="findAll" resultType="two.example.demo.eneity.User">
         select * from User;
     </select>
-    <select id="findById" parameterType="string" resultType="two.example.demo.eneity.User">
+    <select id="findById" parameterType="String" resultType="two.example.demo.eneity.User">
         select * from User where id=#{id};
     </select>
-    <insert id="insertUser" parameterType="two.example.demo.eneity.User">
-        insert into User(id,password,isorder,name,address,phone) values (#{id},#{password},#{isorder},#{name},#{address},#{phone});
+    <select id="findByPhone" parameterType="String" resultType="two.example.demo.eneity.User">
+        select * from User where phone=#{phone};
+    </select>
+    <insert id="insertUser" parameterType="two.example.demo.eneity.User" useGeneratedKeys="true">
+        insert into User(password,isorder,name,address,phone) values (#{password},#{isorder},#{name},#{address},#{phone});
     </insert>
     <delete id="deleteUser" parameterType="String">
         delete from User where id=#{id};

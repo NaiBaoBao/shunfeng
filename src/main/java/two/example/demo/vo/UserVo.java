@@ -15,8 +15,6 @@ public class UserVo {
         this.id = id;
     }
 
-
-
     public Integer getIdentity() {
         return identity;
     }
