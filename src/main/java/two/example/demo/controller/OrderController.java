@@ -28,6 +28,6 @@ public class OrderController {
     public int insertOrder(Order order){
         return orderService.insertOrder(order);
     }
-
+    @GetMapping(value = "order/phone")
     public List<Order> findByPhone(String phoneCustomer){return orderService.findByPhone(phoneCustomer);}
 }
