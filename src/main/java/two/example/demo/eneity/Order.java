@@ -11,6 +11,7 @@ public class Order {
     private Float total;
     private String nameCustomer;
     private String addressCustomer;
+    private String phoneCustomer;
 
     public Order(){
 
@@ -96,5 +97,11 @@ public class Order {
         this.total = total;
     }
 
+    public String getPhoneCustomer(){
+        return phoneCustomer;
+    }
 
+    public void setPhoneCustomer(){
+        this.phoneCustomer = phoneCustomer;
+    }
 }

@@ -11,4 +11,5 @@ public interface OrderDao {
     public List<Order> findById(String idCustomer);
     public List<Order> findByName(String nameCustomer);
     public int insertOrder(Order order);
+    public List<Order> findByPhone(String phoneCustomer);
 }

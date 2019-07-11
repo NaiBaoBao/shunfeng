@@ -20,6 +20,7 @@ public class OrderService {
         String n="%"+nameCustomer+"%";
         return orderDao.findByName(n);
     }
+    public List<Order> findByPhone(String phoneCustomer){return orderDao.findByPhone(phoneCustomer);}
     public int insertOrder(Order order){
         return orderDao.insertOrder(order);
     }
