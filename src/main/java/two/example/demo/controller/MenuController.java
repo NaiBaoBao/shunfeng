@@ -35,12 +35,12 @@ public class MenuController {
         return menuService.deleteMenu(name);
     }
     @PutMapping(value = "")
-    public int updateMenu(Integer idMenu,String name,Integer num,Float price,String description,String image){
-        return menuService.updateMenu(idMenu,name,num,price,description,image);
+    public int updateMenu(Integer idMenu,String name,Integer num,Float price,String description){
+        return menuService.updateMenu(idMenu,name,num,price,description);
     }
     @GetMapping(value = "modify")
-    public int modifyMenu(Integer idMenu,String name,String type,Integer num,Float price,String description,String image){
-        return menuService.modifyMenu(idMenu,name,type,num,price,description,image);
+    public int modifyMenu(Integer idMenu,String name,String type,Integer num,Float price,String description){
+        return menuService.modifyMenu(idMenu,name,type,num,price,description);
     }
 
 }

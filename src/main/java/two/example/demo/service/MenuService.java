@@ -25,14 +25,14 @@ public class MenuService {
     public int insertMenu(Menu menu){
         return menuDao.insertMenu(menu);
     }
-    public int modifyMenu (Integer id_menu,String name,String type,Integer num,Float price,String description,String image){
-        return menuDao.modifyMenu(id_menu,name,type,num,price,description,image);
+    public int modifyMenu (Integer id_menu,String name,String type,Integer num,Float price,String description){
+        return menuDao.modifyMenu(id_menu,name,type,num,price,description);
     }
     public int deleteMenu(String name){
         return menuDao.deleteMenu(name);
     }
-    public int updateMenu(Integer idMenu,String name,Integer num,Float price,String description,String image){
-        return menuDao.updateMenu(idMenu,name,num,price,description,image);
+    public int updateMenu(Integer idMenu,String name,Integer num,Float price,String description){
+        return menuDao.updateMenu(idMenu,name,num,price,description);
     }
 
 }

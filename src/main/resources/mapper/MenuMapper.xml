@@ -13,7 +13,7 @@
         select * from Menu where name like #{keywords};
     </select>
     <insert id="insertMenu" parameterType="two.example.demo.eneity.Menu" useGeneratedKeys="true">
-        insert into Menu(name,type,num,price,description,image) values (#{name},#{type},#{num},#{price},#{description},#{image});
+        insert into Menu(name,type,num,price,description) values (#{name},#{type},#{num},#{price},#{description});
     </insert>
     <delete id="deleteMenu" parameterType="String">
         delete from Menu where name=#{name};
@@ -33,13 +33,10 @@
         <if test="param5!=null">
             description=#{param5},
         </if>
-        <if test="param6!=null">
-            image=#{param6}
-        </if>
         </set>
         where idMenu=#{param1}
     </update>
     <update id="modifyMenu">
-        UPDATE menu set name=#{name},type=#{type},num=#{num},price=#{price},description=#{description},image=#{image} where id_menu=#{idMenu}
+        UPDATE menu set name=#{name},type=#{type},num=#{num},price=#{price},description=#{description} where id_menu=#{idMenu}
     </update>
 </mapper>

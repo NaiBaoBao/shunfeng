@@ -7,7 +7,6 @@ public class Menu {
     private Integer num;
     private Float price;
     private String description;
-    private String image;
 
     public Menu(){
     }
@@ -60,13 +59,7 @@ public class Menu {
         this.description = description;
     }
 
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     @Override
     public String toString() {
@@ -77,7 +70,6 @@ public class Menu {
                 ", num=" + num +
                 ", price=" + price +
                 ", description='" + description + '\'' +
-                ", image='" + image + '\'' +
                 '}';
     }
 }

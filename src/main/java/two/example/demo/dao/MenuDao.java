@@ -12,8 +12,8 @@ public interface MenuDao {
     public List<Menu> findByType(String type);
     public List<Menu> findByKeywords(String keywords);
     public int insertMenu(Menu menu);
-    public int updateMenu(@Param("idMenu")Integer idMenu,@Param("name")String name,@Param("num")Integer num,@Param("price")Float price,@Param("description")String description,@Param("image")String image);
-    public int modifyMenu(Integer idMenu,String name,String type,Integer num,Float price,String description,String image);
+    public int updateMenu(@Param("idMenu")Integer idMenu,@Param("name")String name,@Param("num")Integer num,@Param("price")Float price,@Param("description")String description);
+    public int modifyMenu(Integer idMenu,String name,String type,Integer num,Float price,String description);
     public int deleteMenu(String name);
 
 }
