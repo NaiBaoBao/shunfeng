@@ -15,5 +15,5 @@ public interface MenuDao {
     public int updateMenu(@Param("idMenu")Integer idMenu,@Param("name")String name,@Param("num")Integer num,@Param("price")Float price,@Param("description")String description);
     public int modifyMenu(Integer idMenu,String name,String type,Integer num,Float price,String description);
     public int deleteMenu(String name);
-
+    public List<Menu> findById(Integer id);
 }

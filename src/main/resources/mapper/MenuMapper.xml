@@ -19,7 +19,7 @@
         delete from Menu where name=#{name};
     </delete>
     <update id="updateMenu">
-        update Menu
+        update menu
         <set>
         <if test="param2!=null">
             name=#{param2},
@@ -34,9 +34,12 @@
             description=#{param5},
         </if>
         </set>
-        where idMenu=#{param1}
+        where id_menu=#{param1}
     </update>
     <update id="modifyMenu">
         UPDATE menu set name=#{name},type=#{type},num=#{num},price=#{price},description=#{description} where id_menu=#{idMenu}
     </update>
+    <select id="findById" parameterType="java.lang.Integer" resultType="two.example.demo.eneity.Menu">
+        SELECT * FROM  menu WHERE id_menu=#{id}
+    </select>
 </mapper>

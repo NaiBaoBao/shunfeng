@@ -7,14 +7,22 @@ public class Order {
     private String name;
     private Integer quantity;
     private String idCustomer;
-    private String status;
-    private Float total;
+    private Integer status;
     private String nameCustomer;
     private String addressCustomer;
     private String phoneCustomer;
+    private Long time;
 
     public Order(){
 
+    }
+
+    public Long getTime() {
+        return time;
+    }
+
+    public void setTime(Long time) {
+        this.time = time;
     }
 
     public Integer getNoOrder() {
@@ -81,27 +89,21 @@ public class Order {
         this.addressCustomer = addressCustomer;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public Float getTotal() {
-        return total;
-    }
-
-    public void setTotal(Float total) {
-        this.total = total;
+    public void setPhoneCustomer(String phoneCustomer) {
+        this.phoneCustomer = phoneCustomer;
     }
 
     public String getPhoneCustomer(){
         return phoneCustomer;
     }
 
-    public void setPhoneCustomer(){
-        this.phoneCustomer = phoneCustomer;
-    }
+
 }

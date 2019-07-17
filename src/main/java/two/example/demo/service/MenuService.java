@@ -35,4 +35,10 @@ public class MenuService {
         return menuDao.updateMenu(idMenu,name,num,price,description);
     }
 
+    public boolean orderMenu(Integer idMenu,Integer quantity){
+        Menu menu=menuDao.findById(idMenu).get(0);
+        updateMenu(idMenu,null,menu.getNum()-quantity,null,null);
+        return true;
+    }
+
 }
