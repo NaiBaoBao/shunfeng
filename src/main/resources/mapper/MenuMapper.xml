@@ -4,19 +4,19 @@
 
 <mapper namespace="two.example.demo.dao.MenuDao">
     <select id="findAll" resultType="two.example.demo.eneity.Menu">
-        select * from Menu;
+        select * from menu;
     </select>
     <select id="findByType" parameterType="string" resultType="two.example.demo.eneity.Menu">
-        select * from Menu where type=#{type};
+        select * from menu where type=#{type};
     </select>
     <select id="findByKeywords" parameterType="string" resultType="two.example.demo.eneity.Menu">
-        select * from Menu where name like #{keywords};
+        select * from menu where name like #{keywords};
     </select>
     <insert id="insertMenu" parameterType="two.example.demo.eneity.Menu" useGeneratedKeys="true">
-        insert into Menu(name,type,num,price,description) values (#{name},#{type},#{num},#{price},#{description});
+        insert into menu(name,type,num,price,description) values (#{name},#{type},#{num},#{price},#{description});
     </insert>
     <delete id="deleteMenu" parameterType="String">
-        delete from Menu where name=#{name};
+        delete from menu where name=#{name};
     </delete>
     <update id="updateMenu">
         update menu

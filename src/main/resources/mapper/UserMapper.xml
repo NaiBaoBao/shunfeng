@@ -4,22 +4,22 @@
 
 <mapper namespace="two.example.demo.dao.UserDao">
     <select id="findAll" resultType="two.example.demo.eneity.User">
-        select * from User;
+        select * from user;
     </select>
     <select id="findById" parameterType="String" resultType="two.example.demo.eneity.User">
-        select * from User where id=#{id};
+        select * from user where id=#{id};
     </select>
     <select id="findByPhone" parameterType="String" resultType="two.example.demo.eneity.User">
-        select * from User where phone=#{phone};
+        select * from user where phone=#{phone};
     </select>
     <insert id="insertUser" parameterType="two.example.demo.eneity.User" useGeneratedKeys="true">
-        insert into User(password,isorder,name,address,phone) values (#{password},#{isorder},#{name},#{address},#{phone});
+        insert into user(password,isorder,name,address,phone) values (#{password},#{isorder},#{name},#{address},#{phone});
     </insert>
     <delete id="deleteUser" parameterType="String">
-        delete from User where id=#{id};
+        delete from user where id=#{id};
     </delete>
     <update id="updateUser">
-        update User
+        update user
         set
             <if test="param2!=null">
                 password=#{param2}

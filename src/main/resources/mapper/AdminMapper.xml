@@ -4,16 +4,16 @@
 
 <mapper namespace="two.example.demo.dao.AdminDao">
     <select id="findAll" resultType="two.example.demo.eneity.Admin">
-        select * from Admin;
+        select * from admin;
     </select>
     <select id="findById" parameterType="string" resultType="two.example.demo.eneity.Admin">
-        select * from Admin where id=#{id};
+        select * from admin where id=#{id};
     </select>
     <insert id="insertAdmin" parameterType="two.example.demo.eneity.Admin">
-        insert into Admin(id,password)values(#{id},#{password});
+        insert into admin(id,password)values(#{id},#{password});
     </insert>
     <update id="updateAdmin">
-        update Admin
+        update admin
         <set>
             <if test="param2!=null">
                 password=#{param2}
@@ -22,6 +22,6 @@
             where id=#{param1}
     </update>
     <delete id="deleteAdmin" parameterType="String">
-        delete from Admin where id=#{id};
+        delete from admin where id=#{id};
     </delete>
 </mapper>
