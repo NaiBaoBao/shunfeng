@@ -69,12 +69,11 @@ public class OrderService {
     }
 
     public boolean confirm(Integer idOrder){
-        List<Order> orderList=orderDao.findByIdOrder(idOrder);
-        //System.out.println("改变1");
-        for(int i=0;i<orderList.size();i++){
-            orderList.get(i).setStatus(1);
-            System.out.println(orderList.get(i));
-        }
+       List<Order> orderList=orderDao.findByIdOrder(idOrder);
+       Order order=new Order();
+       for(int i=0;i<orderList.size();i++){
+           order.setStatus(1);
+       }
         return true;
     }
 }
