@@ -27,4 +27,6 @@ public class OrderController {
     }
     @GetMapping(value = "order/phone")
     public List<Order> findByPhone(String phoneCustomer){return orderService.findByPhone(phoneCustomer);}
+    @GetMapping(value = "order/confirm")
+    public boolean confirm(Integer idOrder){return true;}
 }

@@ -61,9 +61,5 @@ public class MenuController {
             return false;
         }
     }
-//    @PostMapping(value = "addIdOrder")
-//    public int addIdOrder(){
-//        return orderService.addIdOrder();
-//    }
 
 }

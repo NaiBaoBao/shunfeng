@@ -28,7 +28,9 @@ public class OrderService {
     public int insertOrder(Order order){
         return orderDao.insertOrder(order);
     }
-
+    public List<Order> findByIdOrder(Integer idOrder){
+        return orderDao.findByIdOrder(idOrder);
+    }
     public int addIdOrder(){
         List<Order> orderList= orderDao.findAll();
         if(orderList.get(orderList.size()-1).getIdOrder()==null){
@@ -63,6 +65,16 @@ public class OrderService {
         order.setPhoneCustomer(phone);
         order.setAddressCustomer(address);
         orderDao.insertOrder(order);
+        return true;
+    }
+
+    public boolean confirm(Integer idOrder){
+        List<Order> orderList=orderDao.findByIdOrder(idOrder);
+        //System.out.println("改变1");
+        for(int i=0;i<orderList.size();i++){
+            orderList.get(i).setStatus(1);
+            System.out.println(orderList.get(i));
+        }
         return true;
     }
 }
