@@ -40,6 +40,11 @@ public class OrderService {
             return orderList.get(orderList.size()-1).getIdOrder()+1;
     }
 
+    public int modifyOrder(Integer idOrder,Integer idMenu,String name,Integer quantity,String idCustomer,Integer status,String nameCustomer,String addressCustomer,String phoneCustomer,Long time)
+    {
+        return orderDao.modifyOrder(idOrder,idMenu,name,quantity,idCustomer,status,nameCustomer,addressCustomer,phoneCustomer,time);
+    }
+
     public boolean addOrder(String id,Integer idMenu,String name,String type,Integer status,Integer quantity,Long time){
         Integer idOrder;
         List<Order> orderList= orderDao.findAll();
@@ -68,11 +73,12 @@ public class OrderService {
         return true;
     }
 
-    public boolean confirm(Integer idOrder){
+    public boolean confirm(Integer idOrder,Integer idMenu,String name,Integer quantity,String idCustomer,Integer status,String nameCustomer,String addressCustomer,String phoneCustomer,Long time){
        List<Order> orderList=orderDao.findByIdOrder(idOrder);
-       Order order=new Order();
        for(int i=0;i<orderList.size();i++){
-           order.setStatus(1);
+           //orderList.get(i).setStatus(1);
+           orderDao.modifyOrder(idOrder,idMenu,name,quantity,idCustomer,status,nameCustomer,addressCustomer,phoneCustomer,time);
+           //System.out.println(orderList.size());
        }
         return true;
     }

@@ -13,4 +13,5 @@ public interface OrderDao {
     public int insertOrder(Order order);
     public List<Order> findByPhone(String phoneCustomer);
     public List<Order> findByIdOrder(Integer idOrder);
+    public int modifyOrder(Integer idOrder,Integer idMenu,String name,Integer quantity,String idCustomer,Integer status,String nameCustomer,String addressCustomer,String phoneCustomer,Long time);
 }

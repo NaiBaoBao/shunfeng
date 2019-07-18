@@ -18,5 +18,7 @@
     <select id="findByIdOrder" parameterType="Integer" resultType="two.example.demo.eneity.Order">
         select * from shun.order where id_order=#{idOrder};
     </select>
-
+    <update id="modifyOrder">
+        update shun.order set id_menu=#{idMenu},name=#{name},quantity=#{quantity},id_customer=#{idCustomer},status=#{status},name_customer=#{nameCustomer},address_customer=#{addressCustomer},phone_customer=#{phoneCustomer},time=#{time} where id_order=#{idOrder};
+    </update>
 </mapper>
