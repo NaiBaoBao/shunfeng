@@ -29,5 +29,5 @@ public class OrderController {
     public List<Order> findByPhone(String phoneCustomer){return orderService.findByPhone(phoneCustomer);}
     @GetMapping(value = "order/confirm")
     public boolean confirm(Integer idOrder,Integer idMenu,String name,Integer quantity,String idCustomer,Integer status,String nameCustomer,String addressCustomer,String phoneCustomer,Long time)
-    {return orderService.confirm(idOrder,idMenu,name,quantity,idCustomer,status,nameCustomer                                                                                                                                                                                                                                    ,addressCustomer,phoneCustomer,time);}
+    {return orderService.confirm(idOrder,idMenu,name,quantity,idCustomer,status,nameCustomer,addressCustomer,phoneCustomer,time);}
 }
